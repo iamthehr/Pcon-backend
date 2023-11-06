@@ -10,6 +10,9 @@ app.use(express.json());
 app.use("/api/events", require("./routes/eventRoutes"));
 app.use("/api/achievements", require("./routes/achievementRoutes"));
 
+app.post("/api/register", require("./auth/register"));
+app.post("/api/login", require("./auth/login"));
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
